@@ -46,9 +46,26 @@ You can explore the complete project documentation here:
 
 ## Technical Details
 
-This project uses **Power Query** for data exploration and transformation and **Power BI** chart visualization, and interactive dashboard creation.
+This project uses **Power Query** for data exploration and transformation and **Power BI**  for chart visualization, and interactive dashboard creation.
 
 ### Data Preparation and Exploration
+- The Product, Manufacturer and Geo table is cointaind in the file name USASales as CSV files, they are imported into Power Query for tranformation
+- The Sales table is conitained in the file named USSales as an Excel file, it is imported into Power Query for tranformation
+- The InternationalSales folder is imported into Power Query as a folder for transformation
+
+### Product Table
+- Change the data type both ProductID and MunufacturerID columns to text
+- Create anew column named 'Segment' by splitting by delimiter the 'Product' column
+- Replace rows with NULL entries using the fill Down function
+- Create a new 'Price' column to have only the price datapoint as just figures with the USD symbol
+
+ ### Geo Table
+ - Remove the top two rows
+ - Promote the first row as new header of the table
+ - Change the 'Zip' column data type to text and remove rows with errors
+ - Remove the redundacy in the data by spilitting the 'city' column by delimitter to have only information city stand alone and the part of the split cointaining state and country datapoint is deleted because we alredy have columns for each of them
+ - Replace blank rows with NA in the City, State, Region, District and Country columns
+   
 
 
 ## Results and Insights
