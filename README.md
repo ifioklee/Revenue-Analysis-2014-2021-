@@ -102,7 +102,16 @@ Now Apply and load to Power BI
 - Create two buttons with labels Manufacturers and Products to swich between the visuals created above
 - Visualize the Total revenue using a Card and the DAX total revenue = SUM(Sales[Revenue])
 - Visualize total number of products using a card and DAX Total Number of Products = DISTINCTCOUNT('Product'[Product])
--    
+- Visualize total number of manufacturers using card and DAX Total Number of Manufacturers = DISTINCTCOUNT(manufacturer[ManufacturerID])
+- Visualize total number of countries using card and DAX Total number of Countries = DISTINCTCOUNT(Sales[Country])
+- Visualize total number of number of cities using card and DAX Number of cities = DISTINCTCOUNT(geo[City])
+- Visualize percentage of urban revenue using card and DAX Urban Revenue Percentage = ('DAX Formulas'[Urban Revenue]/'DAX Formulas'[total revenue])*100
+- The revenue by category is visualized using a donut chart
+- The revenue by country is visualized using a stacked column chart
+- The revenue trend by year by month is visualized using a line chart
+- Three slicers which filter the data according to year, month and products are included to make the dashboard interactive
+- Revenue performace revenue comparison across countries, segments and products is visualized using a matrix viuslization with sparklines inside the table.
 
 
 ## Results and Insights
+The analysis accounted for a total revenue of $2.91bn from years 2014 to 2022 across 2,172 products line, 14 manufacturers with sales in 7 different countries and 21,598 cities with 79.79% of the generated revenue coming from urban cities. During the year in revenue for this analysis we find that the top 10 products by revenue were Maximus UM-80, Maximus UM-01, Natura UM-10, Maximus UC-00, Maximus UC-69, Maximus UC-74, Maximus UC-41, Maximus UM-50, Maximus UM-04, Maximus UC-16 and the top 5 manufacturers by revenune were VanArsdel, ltd with $1,281,418,188.10, Fabrikam,inc with $594,258,648.76, Tailwind Traders with $ 347,432,115.22, wide world importers with $264,569,247.71, Nod Publishers with $212,485,555.77
