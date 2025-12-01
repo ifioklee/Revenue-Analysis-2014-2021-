@@ -50,7 +50,7 @@ The original datasets used for this analysis can be downloaded here:
 
 ### DAX Scripts
 This file contains the DAX formulas used throughout the analysis:  
-**[View DAX Formula Script]** *()*
+[View DAX Formula Script](https://github.com/ifioklee/Revenue-Analysis-2014-2021-/blob/main/DAX.md)
 
 ### Visualization
 Interactive Power BI dashboard:  
