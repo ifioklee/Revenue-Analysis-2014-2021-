@@ -1,117 +1,181 @@
-# Revenue Analysis (2014-2021)
+# Revenue Analysis (2014–2021)
 
-# Project Overview
-This reposistory contains details relating to the analysis of combination of datasets relating to the revenue of a ficticious company from the year 2014 through to the year 2021. I worked on this project using power query to transform the various dataset and Power BI to visulize various insight from the working on the dataset. Working on this project helped me learn how to use Power Query for various data transformation process and Power BI for visulization, I also got to apply my knowledge of DAX while working with Power BI to derive and visulize various insights.
+## Project Overview
+This repository contains details relating to the analysis of combined datasets on the revenue of a fictitious company from 2014 to 2021.  
+
+The project was carried out using **Power Query** for data transformation and **Power BI** for visualizing insights.  
+Working on this analysis strengthened my skills in:
+
+- Power Query for data transformation  
+- Power BI for dashboard creation  
+- DAX for calculations and logical measures  
+
+---
 
 ## Project Goal
+The primary goal of this project is to practically apply Power Query, Power BI, and DAX to transform, model, and visualize data.  
+The final Power BI interactive dashboard answers the following questions:
 
-The goal of this project is to firstly to help me apply practically my knowledge of the use of Power Query for data transformation, Power BI for data visulization and the use of DAX in creating various logical measures within Power BI.By applying apply all these, this project end goal is to visualize the answers to the following question on a Power BI interactive dashboard.
+1. Total Revenue  
+2. Total Number of Products  
+3. Total Number of Manufacturers  
+4. Percentage of Urban Revenue  
+5. Number of Countries  
+6. Total Number of Cities  
+7. Revenue Trend by Year and Month  
+8. Top 5 Manufacturers by Revenue  
+9. Top 10 Products by Revenue  
+10. Total Revenue by Category  
+11. Total Revenue by Country  
+12. Revenue Performance Table (Segment, Revenue, Sparkline by Product)
 
-1. Total Revenue. 
-2. Total number of Products. 
-3. Total number of Manufactures. 
-4. % of Urban Revenue.
-5. Number of countries 
-6. Total number of cities. 
-7. Revenue trend by year and month. 
-8. Top 5 Manufacturers By Revenue.
-9. Top 10 Products By Revenue. 
-10. Total Revenue By category. 
-11. Total Revenue By Country. 
-12. Segment, Revenue, and a Sparkline of revenue by product (Table Visual).
+---
 
-# Features
-- Interactive Power BI dashboard with year, month and product slicers
-- File that includes all the DAX formula used in creating different measure in Power BI
+## Features
+- Interactive **Power BI dashboard** with slicers (Year, Month, Product)  
+- Includes a file containing all **DAX formulas** used in the report  
 
+---
 
-# Data
-
-# Project Structure
+## Data
 
 ### Raw Dataset
-The original dataset used for this analysis can be found here:  
-[InternationalSales](https://github.com/ifioklee/Revenue-Analysis-2014-2021-/blob/main/InternationalSales.zip) and [USSales](https://github.com/ifioklee/Revenue-Analysis-2014-2021-/blob/main/USSales.zip)
-### DAX Scrips Analysis
-This file contains DAX formula for the analysis:  
-[ View DAX Formula Script]
+The original datasets used for this analysis can be downloaded here:
+
+- **International Sales:**  
+  [InternationalSales.zip](https://github.com/ifioklee/Revenue-Analysis-2014-2021-/blob/main/InternationalSales.zip)
+
+- **US Sales:**  
+  [USSales.zip](https://github.com/ifioklee/Revenue-Analysis-2014-2021-/blob/main/USSales.zip)
+
+### DAX Scripts
+This file contains the DAX formulas used throughout the analysis:  
+**[View DAX Formula Script]** *()*
 
 ### Visualization
-Interactive Power BI dashboard is available here:  
-[View Power BI Dashboard]
+Interactive Power BI dashboard:  
+**[View Power BI Dashboard]** *()*
 
-### README.md Project verview and instructions
-You can explore the complete project documentation here:  
+### README.md (Project Overview & Instructions)
+Full project documentation:  
 [View README File](https://github.com/ifioklee/Sales-Data-Analysis-Using-Excel/blob/main/README.md)
+
+---
 
 ## Technical Details
 
-This project uses **Power Query** for data exploration and transformation and **Power BI**  for chart visualization, and interactive dashboard creation.
+### Tools Used
+- **Power Query** — data transformation and preparation  
+- **Power BI** — visualization, modeling, DAX, and dashboard creation  
 
-### Data Preparation and Exploration (Power Query)
-- The Product, Manufacturer and Geo table is cointaind in the file name USASales as CSV files, they are imported into Power Query for tranformation
-- The Sales table is conitained in the file named USSales as an Excel file, it is imported into Power Query for tranformation
-- The InternationalSales folder is imported into Power Query as a folder for transformation
+---
 
-#### Product Table
-- Change the data type both ProductID and MunufacturerID columns to text
-- Create anew column named 'Segment' by splitting by delimiter the 'Product' column
-- Replace rows with NULL entries using the fill Down function
-- Create a new 'Price' column to have only the price datapoint as just figures with the USD symbol
+## Data Preparation & Transformation (Power Query)
 
- #### Geo Table
- - Remove the top two rows
- - Promote the first row as new header of the table
- - Change the 'Zip' column data type to text and remove rows with errors
- - Remove the redundacy in the data by spilitting the 'city' column by delimitter to have only information city stand alone and the part of the split cointaining state and country datapoint is deleted because we alredy have columns for each of them
- - Replace blank rows with NA in the City, State, Region, District and Country columns
+### Product Table
+- Change data type of *ProductID* and *ManufacturerID* to **text**
+- Create a new column **Segment** by splitting the *Product* column
+- Replace NULL values using **Fill Down**
+- Create a **Price** column containing numeric price values only
 
-#### Manufacturer Table
-- Remove last 3 rows as they cointain null entries
-- Transpose the table
-- Promote first row the header of the table
-- Change the data type of the ManufacturerID column to text
+### Geo Table
+- Remove the top two rows  
+- Promote first row as header  
+- Change *Zip* column to **text** and remove rows with errors  
+- Split the *City* column to remove redundant data  
+- Replace blanks with **NA**  
 
-#### Sales Table 
-- Change the data type of the ProductID, Zip and Revenue to text, text and fixed decimal respectively
-- Replace all NULL entries in the country column with USA( this is done after the InternationalSales table has been appended to the Sales table)
+### Manufacturer Table
+- Remove last 3 rows (null entries)  
+- Transpose the table  
+- Promote first row as header  
+- Change *ManufacturerID* to **text**  
 
-#### InternationalSales Table
-- Delete the column 'Source.name'
-- Remove errors from 'Zip' column
-- Change the data type of ProductID, Zip and Revenue columns to text, text and fixed decimals respectively
-- Append to Sales Table
-- Disable load after appending to the Sales Table
+### Sales Table
+- Change data type of *ProductID*, *Zip*, *Revenue* to **text**, **text**, and **fixed decimal**  
+- Replace NULL values in the *Country* column with **USA** (after appending international sales)
 
-Now Apply and load to Power BI
+### International Sales Table
+- Delete *Source.name* column  
+- Remove errors from *Zip*  
+- Set *ProductID*, *Zip*, and *Revenue* to correct data types  
+- Append to Sales Table  
+- Disable load for this table  
 
-### Power BI
-- Create a new table called 'Calendar' using DAX Calendar = CALENDARAUTO()
-- Change data type 'Date' column in the Calendar table
-- Create new column called month in the Calendar table using DAX Month = FORMAT('Calendar'[Date].[Month],"MMMM")
+After transformations, data was loaded into **Power BI**.
 
-### Data Modeling( Power BI)
-- The product table to sales table by ProductID with one to many cardinality
-- The Geo table to sales table by Zip with many to many cardinality
-- The manufacturer table to product table by ManufacturerID with one to many cardinality
-- The calendar table to the sales table by Date with one to many cardinality
+---
 
-### Visulization with Power BI
-- Visualize to 10 Products by revenue using a stacked bar chart
-- Visualize to 5 Manufacturer by revenue using a stacked bar chart
-- Create two buttons with labels Manufacturers and Products to swich between the visuals created above
-- Visualize the Total revenue using a Card and the DAX total revenue = SUM(Sales[Revenue])
-- Visualize total number of products using a card and DAX Total Number of Products = DISTINCTCOUNT('Product'[Product])
-- Visualize total number of manufacturers using card and DAX Total Number of Manufacturers = DISTINCTCOUNT(manufacturer[ManufacturerID])
-- Visualize total number of countries using card and DAX Total number of Countries = DISTINCTCOUNT(Sales[Country])
-- Visualize total number of number of cities using card and DAX Number of cities = DISTINCTCOUNT(geo[City])
-- Visualize percentage of urban revenue using card and DAX Urban Revenue Percentage = ('DAX Formulas'[Urban Revenue]/'DAX Formulas'[total revenue])*100
-- The revenue by category is visualized using a donut chart
-- The revenue by country is visualized using a stacked column chart
-- The revenue trend by year by month is visualized using a line chart
-- Three slicers which filter the data according to year, month and products are included to make the dashboard interactive
-- Revenue performace revenue comparison across countries, segments and products is visualized using a matrix viuslization with sparklines inside the table.
+## Power BI Modeling & DAX
 
+### Calendar Table
+- Create using:  
+  `Calendar = CALENDARAUTO()`
+- Add Month column:  
+  `Month = FORMAT('Calendar'[Date].[Month], "MMMM")`
 
-## Results and Insights
-The analysis accounted for a total revenue of $2.91bn from years 2014 to 2022 across 2,172 products line, 14 manufacturers with sales in 7 different countries and 21,598 cities with 79.79% of the generated revenue coming from urban cities. During the year in revenue for this analysis we find that the top 10 products by revenue were Maximus UM-80, Maximus UM-01, Natura UM-10, Maximus UC-00, Maximus UC-69, Maximus UC-74, Maximus UC-41, Maximus UM-50, Maximus UM-04, Maximus UC-16 and the top 5 manufacturers by revenune were VanArsdel, ltd with $1,281,418,188.10, Fabrikam,inc with $594,258,648.76, Tailwind Traders with $ 347,432,115.22, wide world importers with $264,569,247.71, Nod Publishers with $212,485,555.77
+### Data Modeling
+- Product → Sales (ProductID): **One-to-Many**
+- Geo → Sales (Zip): **Many-to-Many**
+- Manufacturer → Product (ManufacturerID): **One-to-Many**
+- Calendar → Sales (Date): **One-to-Many**
+
+---
+
+## Visualizations in Power BI
+- **Top 10 Products by Revenue** – Stacked Bar Chart  
+- **Top 5 Manufacturers by Revenue** – Stacked Bar Chart  
+- **Toggle Buttons** to switch between Products and Manufacturers  
+- **Total Revenue** – Card  
+- **Total Number of Products** – Card  
+- **Total Number of Manufacturers** – Card  
+- **Total Number of Countries** – Card  
+- **Total Number of Cities** – Card  
+- **Urban Revenue (%)** – Card  
+- **Revenue by Category** – Donut Chart  
+- **Revenue by Country** – Stacked Column Chart  
+- **Revenue Trend (Year & Month)** – Line Chart  
+- **Slicers** – Year, Month, Product  
+- **Matrix Table** – Revenue performance with sparklines (Countries, Segments, Products)
+
+---
+
+## Results & Insights
+
+- **Total Revenue:** $2.91 billion (2014–2021)  
+- **Products:** 2,172 product lines  
+- **Manufacturers:** 14  
+- **Countries:** 7  
+- **Cities:** 21,598  
+- **Urban Revenue:** 79.79% of total revenue  
+
+### Top Products by Revenue
+1. Maximus UM-80  
+2. Maximus UM-01  
+3. Natura UM-10  
+4. Maximus UC-00  
+5. Maximus UC-69  
+6. Maximus UC-74  
+7. Maximus UC-41  
+8. Maximus UM-50  
+9. Maximus UM-04  
+10. Maximus UC-16  
+
+### Top Manufacturers by Revenue
+- VanArsdel, Ltd — **$1,281,418,188.10**  
+- Fabrikam, Inc — **$594,258,648.76**  
+- Tailwind Traders — **$347,432,115.22**  
+- Wide World Importers — **$264,569,247.71**  
+- Nod Publishers — **$212,485,555.77**  
+
+### Revenue by Country
+| Country  | Revenue |
+|----------|----------------------|
+| USA      | $1,697,110,399.53 |
+| Australia | $761,681,611.27 |
+| Japan     | $227,982,217.89 |
+| Nigeria   | $85,003,218.08 |
+| Germany   | $69,249,072.33 |
+| Mexico    | $51,944,903.93 |
+| Canada    | $18,253,884.50 |
+
