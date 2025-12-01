@@ -54,7 +54,7 @@ This file contains the DAX formulas used throughout the analysis:
 
 ### Visualization
 Interactive Power BI dashboard:  
-**[View Power BI Dashboard]** *()*
+**[View Power BI Dashboard]** *(https://github.com/ifioklee/Revenue-Analysis-2014-2021-/blob/main/Revenue%20Analysis(2014-2021)%20Dashboard.pbix)*
 
 ### README.md (Project Overview & Instructions)
 Full project documentation:  
